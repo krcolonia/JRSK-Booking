@@ -9,3 +9,69 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+@font-face {
+	font-family: 'coolvetica';
+	src: url('../fonts/CoolveticaRg-Regular.woff'),
+		 url('../fonts/CoolveticaRg-Regular.woff2');
+}
+
+@font-face {
+	font-family: 'heavitas';
+	src: url('../fonts/Heavitas.woff'),
+		 url('../fonts/Heavitas.woff2');
+}
+
+@font-face {
+	font-family: 'tungsten';
+	src: url('../fonts/Tungsten-Bold.woff'),
+		 url('../fonts/Tungsten-Bold.woff2');
+}
+
+.font-coolvetica {
+	font-family: 'coolvetica';
+}
+
+.font-heavitas {
+	font-family: 'heavitas';
+}
+
+.font-tungsten {
+	font-family: 'tungsten';
+}
+
+.bg-reallyLightGray {
+	background-color: #F1F1F1F1;
+}
+
+.bg-antiFlashWhite {
+	background-color: #F2F3F4;
+}
+
+.bg-antiqueWhite {
+	background-color: #F7ECDE;
+}
+
+.bg-pearl {
+	background-color: #E9DAC1;
+}
+
+.bg-seaFoamGreen {
+	background-color: #9ED2C6;
+}
+
+.bg-verdigris {
+	background-color: #54BAB9;
+}
+
+.bg-orangeRed {
+	background-color: #FF5C5C;
+}
+
+.form-btn {
+	background-color: #54BAB9;
+}
+
+.form-btn:hover {
+	background-color: #9ED2C6;
+}

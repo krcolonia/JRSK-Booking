@@ -23,6 +23,13 @@
 <body class="font-coolvetica m-0 p-0">
 	<nav id="top-nav-bar" class="fixed top-0 z-5 flex flex-row align-center h-15 w-full m-0 bg-verdigris">
 		<a href="{{ route('index') }}" class="flex"><img src="{{ asset('images/Banner_v2.png') }}" alt="icon"></a>
+		<div class="flex flex-row align-center">
+			@if(Auth::check())
+			<p>logged in as {{ auth()->user()->firstName }}</p>
+			@else
+			<p>logged out</p>
+			@endif
+		</div>
 	</nav>
 	@yield('content')
 </body>

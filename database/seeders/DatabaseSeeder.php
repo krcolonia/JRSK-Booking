@@ -7,6 +7,9 @@ use App\Models\Userrole;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use Database\Seeders\UserSeeder;
+use Database\Seeders\UserroleSeeder;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,12 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'firstName' => 'JRSK',
-            'lastName' => 'Admin',
-            'email' => 'jrsk@gmail.com',
-        ]);
+        UserSeeder::class;
+		UserroleSeeder::class;
     }
 }

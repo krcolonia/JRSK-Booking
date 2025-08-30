@@ -13,9 +13,11 @@ Route::get('/', function() {
 })->name('index'); 
 
 Route::controller(UserController::class)->group(function() {
-	Route::get('login', 'loginIndex')->name('login'); 
-	Route::post('login', 'login')->name('loginSubmit');
-	
 	Route::get('register', 'registerIndex')->name('register');
-	Route::post('register', 'register')->name('registerSubmit');
+	Route::post('register', 'register')->name('register.submit');
+
+	Route::get('login', 'loginIndex')->name('login'); 
+	Route::post('login', 'login')->name('login.submit');
+	
+	Route::get('logout', 'logout')->name('logout');
 });

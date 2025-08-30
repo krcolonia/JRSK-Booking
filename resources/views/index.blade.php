@@ -6,7 +6,7 @@
 @section('content')
 <div>
 	<section class="flex flex-col justify-center items-center h-screen w-screen">
-
+		
 	</section>
 </div>
 @endsection

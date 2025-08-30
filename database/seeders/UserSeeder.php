@@ -20,6 +20,7 @@ class UserSeeder extends Seeder
 			'lastName' => 'Admin 1',
 			'email' => 'jrsk@gmail.com',
 			'password' => Hash::make('jrsk_admin'), // ? only for testing purposes, remove if releasing to public
+			'userrole_id' => 1,
 		]);
     }
 }

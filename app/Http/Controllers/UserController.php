@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
@@ -30,16 +31,39 @@ class UserController extends Controller
 		]);
 
 		if($validator->fails()) {
-			return back()->with(['message' => 'Validation Error.']);
+			return back()->withErrors('Validation Error.');
 		}
 
-		$user = User::create([
+		User::create([
 			'firstName' => $request->firstName,
 			'lastName' => $request->lastName,
+			'userrole_id' => 3, // ? registered users are Guests by default
 			'email' => $request->email,
 			'password' => Hash::make($request->password),
 		]);
 
-		return back();
+		return redirect('register')->with(['message' => 'User Registered Successfully']);
+	}
+
+	public function login(Request $request) {
+		$request->validate([
+			'email' => 'required',
+			'password' => 'required',
+		]);
+
+		$credentials = $request->only('email', 'password');
+
+		if(Auth::attempt($credentials)) {
+			return view('index');
+		}
+
+		return back()->withErrors('Credentials Invalid!');
+	}
+
+	public function logout() {
+		Session::flush();
+		Auth::logout();
+
+		return view('admin.login');
 	}
 }

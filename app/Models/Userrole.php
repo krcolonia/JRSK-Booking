@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Userrole extends Model
 {
+	public $timestamps = false;
+	
     protected $primaryKey = 'id';
 
 	protected $fillable = [
-        'firstName',
+        'name',
     ];
 
 	public function users(){

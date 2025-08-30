@@ -24,13 +24,13 @@
 	<!--
 	// TODO -> header design for currently logged in user is a placeholder. rework UI once base functionalities are working.
 	-->
-	<nav id="top-nav-bar" class="fixed top-0 z-5 flex flex-row align-center h-15 w-full m-0 bg-verdigris">
+	<nav id="top-nav-bar" class="fixed top-0 z-5 flex flex-row justify-between h-15 w-full m-0 bg-verdigris">
 		<a href="{{ route('index') }}" class="flex"><img src="{{ asset('images/Banner_v2.png') }}" alt="icon"></a>
-		<div class="flex flex-row align-center">
+		<div class="flex flex-row pr-2 items-center fontcolor-pearl">
 			@if(Auth::check())
 			<p>logged in as {{ auth()->user()->firstName }}</p>
 			@else
-			<p>logged out</p>
+			<p>logged out. login <a href="{{ route('login') }}" class="underline text-blue-700">here</a></p>
 			@endif
 		</div>
 	</nav>

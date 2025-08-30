@@ -64,6 +64,6 @@ class UserController extends Controller
 		Session::flush();
 		Auth::logout();
 
-		return view('admin.login');
+		return view('admin.                                                            login');
 	}
 }

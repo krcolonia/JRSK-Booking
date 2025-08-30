@@ -48,6 +48,10 @@ class User extends Authenticatable
         ];
     }
 
+	public function bookings() {
+		return $this->hasOne(Booking::class, 'guestId');
+	}
+
 	public function role()
 	{
 		return $this->belongsTo(Userrole::class, 'userrole_id');

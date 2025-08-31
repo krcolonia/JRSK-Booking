@@ -28,4 +28,8 @@ class Booking extends Model
 	public function status() {
 		return $this->belongsTo(BookingStatus::class ,'bookingStatusId');
 	}
+
+	public function detail() {
+		return $this->hasMany(BookingDetail::class, 'bookingDetailsId');
+	}
 }

@@ -25,8 +25,13 @@ return new class extends Migration
 			$table->string('bookingStatus');
 		});
 
+		Schema::create('bookingDetails', function($table) {
+			$table->id();
+		});
+
 		Schema::table('bookings', function($table) {
 			$table->foreignId('guestId')->constrained('users')->onDelete('cascade');
+			$table->foreignId('bookingDetailsId')->constrained('bookingDetails')->onDelete('cascade');
 			$table->foreignId('bookingStatusId')->constrained('bookingStatus')->onDelete('cascade');
 		});
     }
@@ -36,5 +41,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('bookings');
         Schema::dropIfExists('bookingStatus');
+		Schema::dropIfExists('bookingDetails');
     }
 };

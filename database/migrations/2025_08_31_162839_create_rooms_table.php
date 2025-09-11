@@ -16,26 +16,26 @@ return new class extends Migration
             $table->string('roomNumber');
         });
 
-		Schema::create('roomType', function($table) {
+		Schema::create('roomTypes', function($table) {
 			$table->id();
 			$table->string('roomType');
 			$table->integer('roomCapacity');
 			$table->double('roomRate');
 		});
 
-		Schema::create('roomStatus', function($table) {
+		Schema::create('roomStatuses', function($table) {
 			$table->id();
 			$table->string('roomStatus');
 		});
 
 		Schema::table('rooms', function($table) {
-			$table->foreignId('roomTypeId')->constrained('roomType')->onDelete('cascade');
-			$table->foreignId('roomStatusId')->constrained('roomStatus')->onDelete('cascade');
+			$table->foreignId('roomTypeId')->constrained('roomTypes')->onDelete('cascade');
+			$table->foreignId('roomStatusId')->constrained('roomStatuses')->onDelete('cascade');
 		});
 		
 		Schema::table('bookingDetails', function($table) {
 			$table->foreignId('roomId')->constrained('rooms')->onDelete('cascade');
-			$table->foreignId('roomTypeId')->constrained('roomType')->onDelete('cascade');
+			$table->foreignId('roomTypeId')->constrained('roomTypes')->onDelete('cascade');
 		});
     }
 
@@ -45,5 +45,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('rooms');
+        Schema::dropIfExists('roomStatuses');
+        Schema::dropIfExists('roomTypes');
     }
 };

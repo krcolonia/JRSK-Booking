@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamps(); 
         });
 
-		Schema::create('bookingStatus', function($table) {
+		Schema::create('bookingStatuses', function($table) {
 			$table->id();
 			$table->string('bookingStatus');
 		});
@@ -32,7 +32,7 @@ return new class extends Migration
 		Schema::table('bookings', function($table) {
 			$table->foreignId('guestId')->constrained('users')->onDelete('cascade');
 			$table->foreignId('bookingDetailsId')->constrained('bookingDetails')->onDelete('cascade');
-			$table->foreignId('bookingStatusId')->constrained('bookingStatus')->onDelete('cascade');
+			$table->foreignId('bookingStatusId')->constrained('bookingStatuses')->onDelete('cascade');
 		});
     }
 
@@ -40,7 +40,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('bookings');
-        Schema::dropIfExists('bookingStatus');
+        Schema::dropIfExists('bookingStatuses');
 		Schema::dropIfExists('bookingDetails');
     }
 };

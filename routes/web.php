@@ -20,4 +20,10 @@ Route::controller(UserController::class)->group(function() {
 	Route::post('login', 'login')->name('login.submit');
 	
 	Route::get('logout', 'logout')->name('logout');
+
+	Route::group(['middleware' => 'auth'], function() {
+		Route::get('admin/create-account', 'adminCreateAccount')->name('admin.createAccount');
+		Route::post('admin/create-account', 'adminCreateAccountSubmit')->name('admin.createAccount.submit');
+	});
+
 });

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.main')
 
 @section('title', 'Admin Login')
 @section('meta_description', 'JRSK Admin Login Page')
@@ -9,7 +9,7 @@
 		@csrf
 		<div class="flex flex-col bg-white rounded-lg shadow-md w-120">
 			<div class="flex justify-center items-center bg-verdigris rounded-t-lg p-4.5 pb-3.5">
-				<h1 class="text-white text-xl font-heavitas">Admin Login</h1>
+				<h1 class="text-white text-xl font-heavitas">Sign In</h1>
 			</div>
 			<div class="flex flex-col p-5">
 				<label for="email">E-mail Address</label>

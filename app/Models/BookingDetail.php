@@ -9,6 +9,7 @@ class BookingDetail extends Model
 {
     use HasFactory;
 
+	protected $table = 'bookingDetails';
 	public $timestamps = false;
 
 	protected $fillable = [

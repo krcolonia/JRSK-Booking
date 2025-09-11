@@ -10,6 +10,7 @@ class Booking extends Model
     /** @use HasFactory<\Database\Factories\BookingsFactory> */
     use HasFactory;
 
+	protected $table = 'bookings';
 	protected $fillable = [
 		'guestId',
 		'bookingDate',

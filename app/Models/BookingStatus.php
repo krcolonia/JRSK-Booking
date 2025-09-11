@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class BookingStatus extends Model
 {
+	protected $table = 'bookingStatuses';
+
     public $timestamps = false;
 
 	protected $primaryKey = 'bookingStatusId';

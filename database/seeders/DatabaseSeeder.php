@@ -7,9 +7,6 @@ use App\Models\Userrole;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use Database\Seeders\UserSeeder;
-use Database\Seeders\UserroleSeeder;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -17,7 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        UserSeeder::class;
-		UserroleSeeder::class;
+        $this->call([
+			UserroleSeeder::class,
+			UserSeeder::class,
+			BookingStatusSeeder::class,
+			RoomStatusSeeder::class,
+		]);
     }
 }

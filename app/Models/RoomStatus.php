@@ -9,6 +9,8 @@ class RoomStatus extends Model
 {
     use HasFactory;
 
+	protected $table = 'roomStatuses';
+
 	public $timestamps = false;
 
 	protected $fillable = [

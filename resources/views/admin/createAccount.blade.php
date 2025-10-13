@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title', 'Admin Register')
-@section('meta_description', 'JRSK Admin Register')
+@section('meta_description', 'JRSK Admin Account Creation Page')
 
 @section('content')
 <div class="flex flex-col justify-center items-center h-screen w-screen">

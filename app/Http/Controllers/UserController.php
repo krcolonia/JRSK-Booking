@@ -44,39 +44,7 @@ class UserController extends Controller
 			'password' => Hash::make($request->password),
 		]);
 
-		return redirect('register')->with(['message' => 'User Registered Successfully']);
-	}
-
-	public function adminCreateAccount() {
-		$roles = DB::table('userRoles')->get();
-		return view('admin.createAccount', [
-			'roles' => $roles
-		]);
-	}
-
-	public function adminCreateAccountSubmit(Request $request) {
-		$validator = Validator::make($request->all(), [
-			'firstName' => 'required|string|max:255',
-			'lastName' => 'required|string|max:255',
-			'role' => 'required|integer',
-			'email' => ['required', 'email', Rule::unique('users', 'email')],
-			'password' => 'required|string|min:8',
-			'c_password' => 'required|string|same:password',
-		]);
-
-		if($validator->fails()) {
-			return back()->withErrors(['msg' => 'Validation Error: '.$validator->errors()->first()]);
-		}
-
-		User::create([
-			'firstName' => $request->firstName,
-			'lastName' => $request->lastName,
-			'userrole_id' => $request->role,
-			'email' => $request->email,
-			'password' => Hash::make($request->password),
-		]);
-
-		return back()->with('message', 'User created successfully');
+		return redirect()->route('login')->with(['message' => 'User Registered Successfully']);
 	}
 
 	public function login(Request $request) {
@@ -88,7 +56,8 @@ class UserController extends Controller
 		$credentials = $request->only('email', 'password');
 
 		if(Auth::attempt($credentials)) {
-			return view('index');
+			// return view('index');
+			return redirect()->route('index');
 		}
 
 		return back()->withErrors('Credentials Invalid!');
@@ -98,6 +67,7 @@ class UserController extends Controller
 		Session::flush();
 		Auth::logout();
 
-		return view('index');
+		// return view('index');
+		return redirect()->route('index');
 	}
 }

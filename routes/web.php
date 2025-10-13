@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Models\User;
 
 // Route::get('/', function () {
@@ -9,7 +10,7 @@ use App\Models\User;
 // });
 
 Route::get('/', function() {
-	return view('index');
+	return view('dashboard');
 })->name('index'); 
 
 Route::controller(UserController::class)->group(function() {
@@ -20,10 +21,12 @@ Route::controller(UserController::class)->group(function() {
 	Route::post('login', 'login')->name('login.submit');
 	
 	Route::get('logout', 'logout')->name('logout');
+});
 
+Route::controller(AdminController::class)->group(function() {
+	Route::get('admin/dashboard', 'index')->name('admin.dashboard');
 	Route::group(['middleware' => 'auth'], function() {
-		Route::get('admin/create-account', 'adminCreateAccount')->name('admin.createAccount');
-		Route::post('admin/create-account', 'adminCreateAccountSubmit')->name('admin.createAccount.submit');
+		Route::get('admin/create-account', 'createAccount')->name('admin.createAccount');
+		Route::post('admin/create-account', 'createAccountSubmit')->name('admin.createAccount.submit');
 	});
-
 });

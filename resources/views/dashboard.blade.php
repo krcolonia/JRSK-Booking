@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('layouts.hamburgerMenu')
+
 @auth
 	@if(auth()->user()->userrole_id == 1)
 		<!-- if admin user -->

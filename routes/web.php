@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Models\User;
@@ -9,9 +10,9 @@ use App\Models\User;
 //     return view('welcome');
 // });
 
-Route::get('/', function() {
-	return view('dashboard');
-})->name('index'); 
+Route::controller(DashboardController::class)->group(function() {
+	Route::get('/', 'index')->name('index');
+});
 
 Route::controller(UserController::class)->group(function() {
 	Route::get('register', 'registerIndex')->name('register');

@@ -15,9 +15,6 @@ use Illuminate\Validation\Rule;
 
 class AdminController extends Controller
 {
-	public function index() {
-		return view('admin.dashboard');
-	}
     public function createAccount() {
 		$roles = DB::table('userRoles')->get();
 		return view('admin.createAccount', [

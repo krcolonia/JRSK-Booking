@@ -31,7 +31,7 @@
 			@if(Auth::check())
 			<p class="pr-2">Logged in as {{ auth()->user()->firstName }}</p>
 			@else
-			<p class="pr-2">Logged out.</p>
+			<!-- <p class="pr-2">Logged out.</p> -->
 			@endif
 			<button id="hamburgerBtn" class="h-full w-15 m-0 p-0">
 				<i class="fa fa-bars text-2xl"></i>

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.adminstaff')
 
 @section('title', 'Admin Dashboard')
 @section('meta_description', 'JRSK Admin Dashboard')

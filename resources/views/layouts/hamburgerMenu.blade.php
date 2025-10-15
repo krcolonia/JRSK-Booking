@@ -1,4 +1,4 @@
-<div id="hamburgerMenu" class="flex flex-col fixed -top-15 right-2 items-end p-1 pb-3 px-5 z-10 bg-verdigris text-white rounded-b-xl transition-all ease-in-out delay-25">
+<div id="hamburgerMenu" class="flex flex-col fixed -top-15 right-2 items-end p-1 pb-3 px-5 z-10 bg-verdigris text-white rounded-b-xl transition-all ease-in-out delay-25 drop-shadow-md">
 	@if(Auth::check())
 		<a href="">Profile</a>
 		@if(auth()->user()->userrole_id == 1)

@@ -22,13 +22,13 @@
 	</style>
 </head>
 <body class="font-coolvetica m-0 p-0 overflow-hidden">
-	<nav id="top-nav-bar" class="fixed top-0 z-40 flex flex-row justify-between h-15 w-full m-0 bg-verdigris">
+	<nav id="top-nav-bar" class="fixed top-0 z-40 flex flex-row justify-between h-15 w-full m-0 bg-verdigris drop-shadow-md">
 		<a href="{{ route('index') }}" class="flex"><img src="{{ asset('images/Banner_v2.png') }}" alt="icon"></a>
 		<div class="flex flex-row items-center fontcolor-pearl">
 			@if(Auth::check())
-			<p class="pr-2">logged in as {{ auth()->user()->firstName }}, {{ App\Models\Userrole::select('name')->where('id', auth()->user()->userrole_id)->first()->name }} Role</p>
+			<p class="pr-2">Logged in as {{ auth()->user()->firstName }}, {{ App\Models\Userrole::select('name')->where('id', auth()->user()->userrole_id)->first()->name }} Role</p>
 			@else
-			<p class="pr-2">logged out.</p>
+			<p class="pr-2">Logged out.</p>
 			@endif
 			<button id="hamburgerBtn" class="h-fulll w-15 m-0 p-0">
 				<i class="fa fa-bars text-white"></i>

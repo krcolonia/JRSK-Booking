@@ -5,16 +5,20 @@
 
 @section('content')
 <section id="landing-section" class="flex flex-col justify-center items-center h-screen w-full">
-	<div class="bg-verdigris h-45 w-85 rounded-xl flex flex-col items-center justify-center">
+	<div class="bg-verdigris h-45 w-85 rounded-xl flex flex-col items-center justify-center mb-10">
 		<img src="{{ asset('images/Banner_v2.png') }}" alt="icon">
 		<p class="fontcolor-pearl">A Hotel Booking System You Can Trust</p>
 	</div>
+
+	@auth
+	<button>Book Now!</button>
+	@endauth
 </section>
-<section class="flex flex-col w-full bg-white py-10 p-15">
-	<div class="flex flex-row justify-center gap-5 mb-10">
+<section class="flex flex-col w-full bg-white py-10 p-15">  
+	<div class="flex flex-row justify-center gap-8 mb-10">
 		<div class="flex flex-col items-center">
 			<img src="{{ asset("/images/Placeholder_Person.jpg") }}" alt="" class="rounded-full h-35">
-			<p class="text-2xl">Kurt Robin Colonia</p>
+			<p class="text-2xl">Kurt Colonia</p>
 			<p>Laravel Developer</p>
 		</div>
 		<div class="flex flex-col items-center">
@@ -29,7 +33,7 @@
 		</div>
 		<div class="flex flex-col items-center">
 			<img src="{{ asset("/images/Placeholder_Person.jpg") }}" alt="" class="rounded-full h-35">
-			<p class="text-2xl">Sean Denmar Ysagun</p>
+			<p class="text-2xl">Sean Ysagun</p>
 			<p>ER and Flow Diagrams</p>
 		</div>
 	</div>

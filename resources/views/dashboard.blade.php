@@ -7,7 +7,7 @@
 		@include('dashboards.staffDashboard')
 	@elseif(auth()->user()->userrole_id == 3)
 		<!-- if guest user -->
-		@include('dashboards.guestDashboard')
+		@include('dashboards.landing')
 	@endif
 @else
 	<!-- If no user is logged in -->

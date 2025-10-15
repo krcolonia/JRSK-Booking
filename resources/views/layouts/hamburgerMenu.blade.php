@@ -1,19 +1,31 @@
-@if(Auth::check())
-	@if(auth()->user()->userrole_id == 1)
-	<div class="flex flex-col fixed top-15 right-5 items-end p-2 z-10">
+<div id="hamburgerMenu" class="flex flex-col fixed -top-15 right-2 items-end p-1 pb-3 px-5 z-10 bg-verdigris text-white rounded-b-xl transition-all ease-in-out delay-25">
+	@if(Auth::check())
 		<a href="">Profile</a>
-		<a href="{{ route('admin.createAccount') }}">Create Account</a>
+		@if(auth()->user()->userrole_id == 1)
+			<a href="{{ route('admin.createAccount') }}">Create an Account</a>
+		@elseif(auth()->user()->userrole_id == 2)
+			<!-- staff options here -->
+		@elseif(auth()->user()->userrole_id == 3)
+			<!-- guest options here -->
+		@endif
 		<a href="{{ route('logout') }}">Logout</a>
-	</div>
-	@elseif(auth()->user()->userrole_id == 2)
-	<div class="flex flex-col fixed top-15 right-5 items-end p-2 z-10">
-		<a href="">Profile</a>
-		<a href="{{ route('logout') }}">Logout</a>
-	</div>
-	@elseif(auth()->user()->userrole_id == 3)
-	<div class="flex flex-col fixed top-15 right-5 items-end p-2 z-10">
-		<a href="">Profile</a>
-		<a href="{{ route('logout') }}">Logout</a>
-	</div>
+	@else
+		<a href="{{ route('login') }}">Login</a>
 	@endif
-@endif
+</div>
+
+<script>
+	let hamburgerBtn = document.getElementById('hamburgerBtn')
+	let hamburgerMenu = document.getElementById('hamburgerMenu')
+
+	hamburgerBtn.addEventListener('click', function() {
+		if(hamburgerMenu.classList.contains('top-15')) {
+			hamburgerMenu.classList.remove('top-15');
+			hamburgerMenu.classList.add('-top-15')
+		}
+		else {
+			hamburgerMenu.classList.add('top-15');
+			hamburgerMenu.classList.remove('-top-15')
+		}
+	});
+</script>

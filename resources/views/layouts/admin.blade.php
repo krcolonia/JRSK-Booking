@@ -28,9 +28,9 @@
 			@if(Auth::check())
 			<p class="pr-2">logged in as {{ auth()->user()->firstName }}, {{ App\Models\Userrole::select('name')->where('id', auth()->user()->userrole_id)->first()->name }} Role</p>
 			@else
-			<p class="pr-2">logged out. login <a href="{{ route('login') }}" class="underline text-blue-700">here</a></p>
+			<p class="pr-2">logged out.</p>
 			@endif
-			<button class="h-fulll w-15 m-0 p-0">
+			<button id="hamburgerBtn" class="h-fulll w-15 m-0 p-0">
 				<i class="fa fa-bars text-white"></i>
 			</button>
 		</div>
@@ -46,7 +46,8 @@
 			</ul>
 		</div>
 	</aside> -->
-	<section id="main-section">
+	<section id="main-section" class="px-5 pt-20">
+		@include('layouts.hamburgerMenu')
 		@yield('content')
 	</section>
 </body>

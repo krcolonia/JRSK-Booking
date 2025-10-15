@@ -11,11 +11,9 @@
 	}
 </style>
 
-@include('layouts.hamburgerMenu')
-
-<div class="flex flex-col mt-15 w-full items-center">
-	<h1 class="mb-10">this is the admin dashboard. may not look like it right now but it will be in due time</h1>
-	<table id="userTable">
+<div class="flex flex-col p-5 h-80 w-full items-center bg-white rounded-md">
+	<h1>Admin Dashboard</h1>
+	<table id="userTable" class="m-5">
 		<tr>
 			<th>ID</th>
 			<th>First Name</th>
@@ -30,7 +28,6 @@
 			<td>{{ $user->lastName }}</td>
 			<td>{{ $user->email }}</td>
 			<td class="text-center">{{ $user->rolename }}</td>
-			<td><button>Edit</button></td>
 		</tr>
 		@endforeach
 	</table>

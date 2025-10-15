@@ -1,12 +1,6 @@
-@extends('layouts.main')
-
-@section('content')
-
-@include('layouts.hamburgerMenu')
-
 @auth
 	@if(auth()->user()->userrole_id == 1)
-		<!-- if admin user -->
+		<!-- if admin user --> 
 		@include('dashboards.adminDashboard')
 	@elseif(auth()->user()->userrole_id == 2)
 		<!-- if staff user -->
@@ -19,5 +13,3 @@
 	<!-- If no user is logged in -->
 	@include('dashboards.landing')
 @endauth
-
-@endsection

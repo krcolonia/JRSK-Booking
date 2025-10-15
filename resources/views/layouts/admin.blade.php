@@ -21,7 +21,7 @@
 	}
 	</style>
 </head>
-<body class="font-coolvetica m-0 p-0">
+<body class="font-coolvetica m-0 p-0 overflow-hidden">
 	<nav id="top-nav-bar" class="fixed top-0 z-40 flex flex-row justify-between h-15 w-full m-0 bg-verdigris">
 		<a href="{{ route('index') }}" class="flex"><img src="{{ asset('images/Banner_v2.png') }}" alt="icon"></a>
 		<div class="flex flex-row items-center fontcolor-pearl">
@@ -35,18 +35,7 @@
 			</button>
 		</div>
 	</nav>
-	<!-- <aside id="default-sidebar" class="fixed top-15 left-0 z-35 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-		<div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-			<ul class="space-y-2 font-medium">
-				<li>
-					<a href="" class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
-						<span class="ms-3">Dashboard</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</aside> -->
-	<section id="main-section" class="px-5 pt-20">
+	<section id="main-section" class="pt-15">
 		@include('layouts.hamburgerMenu')
 		@yield('content')
 	</section>

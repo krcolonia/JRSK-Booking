@@ -35,7 +35,7 @@
 			</button>
 		</div>
 	</nav>
-	<section id="main-section" class="pt-15">
+	<section id="main-section">
 		@include('layouts.hamburgerMenu')
 		@yield('content')
 	</section>

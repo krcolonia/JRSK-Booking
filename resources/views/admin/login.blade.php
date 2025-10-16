@@ -30,7 +30,7 @@
 				>
 				<button class="form-btn active:bg-black p-2 px-5 rounded text-white self-center">Login</button>
 
-				<p class="self-center pt-3">Don't have an account yet? <a href="{{ route('register') }}" class="text-blue-500 underline">Create Account</a>.</p>
+				<!-- <p class="self-center pt-3">Don't have an account yet? <a href="{{ route('register') }}" class="text-blue-500 underline">Create Account</a>.</p> -->
 			</div>
 		</div>
 	</form>

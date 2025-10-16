@@ -21,13 +21,28 @@ class DashboardController extends Controller
 		if(auth()->check()) {
 			switch(auth()->user()->userrole_id) {
 				case 1:
+					$admins = DB::table('users')
+						->leftJoin('userRoles', 'userRoles.id', '=', 'users.userrole_id')
+						->where('users.userrole_id', 1)
+						->select('users.*', 'userRoles.name as rolename')
+						->get();
+
+					$staffs = DB::table('users')
+						->leftJoin('userRoles', 'userRoles.id', '=', 'users.userrole_id')
+						->where('users.userrole_id', 2)
+						->select('users.*', 'userRoles.name as rolename')
+						->get();
+
 					$users = DB::table('users')
 						->leftJoin('userRoles', 'userRoles.id', '=', 'users.userrole_id')
+						->where('users.userrole_id', 3)
 						->select('users.*', 'userRoles.name as rolename')
 						->get();
 
 					return view('dashboard', [
-						'users' => $users,
+						'admins' => $admins,
+						'staffs' => $staffs,
+						'users' => $users
 					]);
 				case 2:
 					break;

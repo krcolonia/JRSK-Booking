@@ -26,7 +26,7 @@
 	// TODO -> header design for currently logged in user is a placeholder. rework UI once base functionalities are working.
 	-->
 	<nav id="top-nav-bar" class="fixed top-0 z-40 flex flex-row justify-between h-15 w-full m-0 bg-verdigris drop-shadow-md">
-		<a href="{{ route('index') }}" class="flex"><img src="{{ asset('images/Banner_v2.png') }}" alt="icon"></a>
+		<a href="{{ route('index') }}" class="flex"><img src="{{ asset('images/Banner_v2.png') }}" alt="icon" /></a>
 		<div class="flex flex-row items-center text-white">
 			@if(Auth::check())
 			<p class="pr-2">Logged in as {{ auth()->user()->firstName }}</p>

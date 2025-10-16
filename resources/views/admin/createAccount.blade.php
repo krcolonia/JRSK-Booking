@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.adminstaff')
 
 @section('title', 'Admin Register')
 @section('meta_description', 'JRSK Admin Account Creation Page')
@@ -62,7 +62,7 @@
 				<label for="c_password">Confirm Password</label>
 				<input
 					type="password"
-					placeholder="Password"
+					placeholder="Confirm Password"
 					name="c_password"
 					class="w-full mb-2 p-2 rounded border-1 border-gray-500"
 					required

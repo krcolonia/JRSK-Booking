@@ -21,7 +21,8 @@
 	}
 	</style>
 </head>
-<body class="font-coolvetica m-0 p-0 overflow-hidden">
+<!-- <body class="font-coolvetica m-0 p-0 overflow-hidden"> -->
+<body class="font-coolvetica m-0 p-0">
 	<nav id="top-nav-bar" class="fixed top-0 z-40 flex flex-row justify-between h-15 w-full m-0 bg-verdigris drop-shadow-md">
 		<a href="{{ route('index') }}" class="flex"><img src="{{ asset('images/Banner_v2.png') }}" alt="icon"></a>
 		<div class="flex flex-row items-center fontcolor-pearl">

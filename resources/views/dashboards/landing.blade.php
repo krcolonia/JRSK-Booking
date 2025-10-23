@@ -15,6 +15,7 @@
 	<button>Book Now!</button>
 	@endauth
 </section>
+
 <!-- <section class="flex flex-col w-full bg-white py-10 p-15">  
 	<div class="flex flex-row justify-center gap-8 mb-10">
 		<div class="flex flex-col items-center">

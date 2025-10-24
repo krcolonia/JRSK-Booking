@@ -3,7 +3,7 @@
 @section('meta_description', 'JRSK Staff Dashboard')
 
 @section('content')
-<div class="flex flex-row h-screen mt-15">
+<div class="flex flex-row h-screen pt-15">
 	<aside id="default-sidebar" class="left-0 z-35 w-80 transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
 		<!-- <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"> -->
 		<div class="h-full px-3 py-4 overflow-y-auto bg-verdigris">
@@ -23,8 +23,10 @@
 		</div>
 	</aside>
 
-	<div class="flex flex-col m-5 p-5 h-screen w-full items-center bg-white rounded-md">
-	<h1>Staff Dashboard</h1>
-</div>
+	<div class="h-full w-full p-5">		
+		<div class="flex flex-col p-5 h-full w-full items-center bg-white rounded-md overflow-y-auto">
+			<h1>Staff Dashboard</h1>
+		</div>
+	</div>
 </div>
 @endsection

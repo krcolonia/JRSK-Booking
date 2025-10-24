@@ -39,17 +39,16 @@ class DashboardController extends Controller
 						->select('users.*', 'userRoles.name as rolename')
 						->get();
 
-					return view('dashboard', [
+					return redirect()->route('admin.dashboard', [
 						'admins' => $admins,
 						'staffs' => $staffs,
 						'users' => $users
 					]);
 				case 2:
-					break;
-				case 3:
-					break;
+					return redirect()->route('staff.dashboard');
 			}
 		}
-		return view('dashboard');
+		return view('dashboards.landing');
+		
 	}
 }

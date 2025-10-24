@@ -12,6 +12,13 @@ use App\Models\User;
 
 Route::controller(DashboardController::class)->group(function() {
 	Route::get('/', 'index')->name('index');
+	Route::get('admin/dashboard', function() {
+		return view('dashboards.adminDashboard');
+	})->name('admin.dashboard');
+	Route::get('staff/dashboard', function() {
+		return view('dashboards.staffDashboard');
+	})->name('staff.dashboard');
+	
 });
 
 Route::controller(UserController::class)->group(function() {
@@ -25,7 +32,6 @@ Route::controller(UserController::class)->group(function() {
 });
 
 Route::controller(AdminController::class)->group(function() {
-	Route::get('admin/dashboard', 'index')->name('admin.dashboard');
 	Route::group(['middleware' => 'auth'], function() {
 		Route::get('admin/create-account', 'createAccount')->name('admin.createAccount');
 		Route::post('admin/create-account', 'createAccountSubmit')->name('admin.createAccount.submit');

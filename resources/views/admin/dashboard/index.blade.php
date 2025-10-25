@@ -1,5 +1,5 @@
 @extends('dashboards.adminDashboard')
 
 @section('dashboardContent')
-<h1>Admin Dashboard</h1>
+<p>dis a admin dashbord. me gud at codeng</p>
 @endsection

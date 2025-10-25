@@ -29,7 +29,7 @@
 		<a href="{{ route('index') }}" class="flex"><img src="{{ asset('images/Banner_v2.png') }}" alt="icon" /></a>
 		<div class="flex flex-row items-center text-white">
 			@if(Auth::check())
-			<p class="pr-2">Logged in as {{ auth()->user()->firstName }}</p>
+			<p class="pr-2">{{ auth()->user()->firstName }}, {{ App\Models\Userrole::select('name')->where('id', auth()->user()->userrole_id)->first()->name }}</p>
 			@else
 			<!-- <p class="pr-2">Logged out.</p> -->
 			@endif
@@ -39,8 +39,9 @@
 		</div>		
 	</nav>
 
-	@include('layouts.hamburgerMenu')
-
-	@yield('content')
+	<div id="mainContent">
+		@include('layouts.components.hamburgerMenu')
+		@yield('content')
+	</div>
 </body>
 </html>

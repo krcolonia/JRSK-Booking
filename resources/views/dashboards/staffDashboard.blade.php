@@ -3,7 +3,7 @@
 @section('meta_description', 'JRSK Staff Dashboard')
 
 @section('content')
-<div class="flex flex-row h-screen pt-15">
+<div class="flex flex-row h-screen pt-15" style="background-color: #00000066">
 	<aside id="default-sidebar" class="left-0 z-35 w-80 transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
 		<!-- <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800"> -->
 		<div class="h-full px-3 py-4 overflow-y-auto bg-verdigris">

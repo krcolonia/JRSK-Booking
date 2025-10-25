@@ -48,7 +48,7 @@ class DashboardController extends Controller
 					return redirect()->route('staff.dashboard');
 			}
 		}
-		return view('dashboards.landing');
+		return view('landing');
 		
 	}
 }

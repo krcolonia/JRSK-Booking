@@ -1,10 +1,10 @@
-@extends('layouts.adminstaff')
+@extends('dashboards.adminDashboard')
 
 @section('title', 'Admin Register')
 @section('meta_description', 'JRSK Admin Account Creation Page')
 
-@section('content')
-<div class="flex flex-col justify-center items-center h-screen w-screen">
+@section('dashboardContent')
+<div class="flex flex-col justify-center items-center h-full w-full">
 	@include('layouts.modals')
 	<form action="{{ route('admin.createAccount.submit') }}" method="POST"> <!-- TODO: Replace form action -->
 		@csrf

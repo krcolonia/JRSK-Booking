@@ -17,7 +17,7 @@ class AdminController extends Controller
 {
     public function createAccount() {
 		$roles = DB::table('userRoles')->get();
-		return view('admin.createAccount', [
+		return view('admin.dashboard.createAccount', [
 			'roles' => $roles
 		]);
 	}

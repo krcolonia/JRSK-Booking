@@ -16,11 +16,11 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
 	public function loginIndex() {
-		return view('admin.login'); // TODO -> replace with public login rather than admin
+		return view('login'); // TODO -> replace with public login rather than admin
 	}
 
 	public function registerIndex() {
-		return view('admin.register'); // TODO -> replace with public register rather than admin
+		return view('register'); // TODO -> replace with public register rather than admin
 	}
 
     public function register(Request $request) {

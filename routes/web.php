@@ -6,14 +6,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Models\User;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::controller(DashboardController::class)->group(function() {
 	Route::get('/', 'index')->name('index');
 	Route::get('admin/dashboard', function() {
-		return view('dashboards.adminDashboard');
+		return view('admin.dashboard.index');
 	})->name('admin.dashboard');
 	Route::get('staff/dashboard', function() {
 		return view('dashboards.staffDashboard');

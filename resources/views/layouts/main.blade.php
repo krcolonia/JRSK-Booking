@@ -29,12 +29,12 @@
 		<a href="{{ route('index') }}" class="flex"><img src="{{ asset('images/Banner_v2.png') }}" alt="icon" /></a>
 		<div class="flex flex-row items-center text-white">
 			@if(Auth::check())
-			<p class="pr-2">{{ auth()->user()->firstName }}, {{ App\Models\Userrole::select('name')->where('id', auth()->user()->userrole_id)->first()->name }}</p>
+			<!-- <p class="pr-2">{{ auth()->user()->firstName }}, {{ App\Models\Userrole::select('name')->where('id', auth()->user()->userrole_id)->first()->name }}</p> -->
 			@else
 			<!-- <p class="pr-2">Logged out.</p> -->
 			@endif
 			<button id="hamburgerBtn" class="h-full w-15 m-0 p-0">
-				<i class="fa fa-bars text-2xl"></i>
+				<i class="fa fa-bars text-3xl"></i>
 			</button>
 		</div>		
 	</nav>

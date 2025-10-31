@@ -46,4 +46,30 @@ class AdminController extends Controller
 
 		return back()->with('message', 'User created successfully');
 	}
+
+	public function viewUsers() {
+		$admins = DB::table('users')
+			->leftJoin('userRoles', 'userRoles.id', '=', 'users.userrole_id')
+			->where('users.userrole_id', 1)
+			->select('users.*', 'userRoles.name as rolename')
+			->get();
+
+		$staffs = DB::table('users')
+			->leftJoin('userRoles', 'userRoles.id', '=', 'users.userrole_id')
+			->where('users.userrole_id', 2)
+			->select('users.*', 'userRoles.name as rolename')
+			->get();
+
+		$users = DB::table('users')
+			->leftJoin('userRoles', 'userRoles.id', '=', 'users.userrole_id')
+			->where('users.userrole_id', 3)
+			->select('users.*', 'userRoles.name as rolename')
+			->get();
+
+		return view('admin.dashboard.viewUsers', [
+			'admins' => $admins,
+			'staffs' => $staffs,
+			'users' => $users
+		]);
+	}
 }

@@ -31,5 +31,6 @@ Route::controller(AdminController::class)->group(function() {
 	Route::group(['middleware' => 'auth'], function() {
 		Route::get('admin/create-account', 'createAccount')->name('admin.createAccount');
 		Route::post('admin/create-account', 'createAccountSubmit')->name('admin.createAccount.submit');
+		Route::get('admin/view-users', 'viewUsers')->name('admin.viewUsers');
 	});
 });

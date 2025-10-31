@@ -15,7 +15,7 @@
 					type="text"
 					placeholder="Juan"
 					name="firstName"
-					class="w-full mb-2 p-2 rounded border-1 border-gray-500"
+					class="w-full mb-2 p-2 rounded-lg border-1 border-gray-500"
 					required
 				>
 			</div>
@@ -25,13 +25,13 @@
 					type="text"
 					placeholder="Dela Cruz"
 					name="lastName"
-					class="w-full mb-2 p-2 rounded border-1 border-gray-500"
+					class="w-full mb-2 p-2 rounded-lg border-1 border-gray-500"
 					required
 				>
 			</div>
 		</div>
 		<label for="role">User Role</label>
-		<select name="role" class="w-full mb-2 p-2 py-3 rounded border-1 border-gray-500">
+		<select name="role" class="w-full mb-2 p-2 py-3 rounded-lg border-1 border-gray-500">
 			<option value="" selected>Select user's role</option>
 			@foreach($roles as $role)
 			<option value="{{ $role->id }}">{{ $role->name }}</option>
@@ -42,7 +42,7 @@
 			type="email"
 			placeholder="E-mail Address"
 			name="email"
-			class="w-full mb-2 p-2 rounded border-1 border-gray-500"
+			class="w-full mb-2 p-2 rounded-lg border-1 border-gray-500"
 			required
 		>
 		<label for="password">Password</label>
@@ -50,7 +50,7 @@
 			type="password"
 			placeholder="Password"
 			name="password"
-			class="w-full mb-2 p-2 rounded border-1 border-gray-500"
+			class="w-full mb-2 p-2 rounded-lg border-1 border-gray-500"
 			required
 		>
 		<label for="c_password">Confirm Password</label>
@@ -58,7 +58,7 @@
 			type="password"
 			placeholder="Confirm Password"
 			name="c_password"
-			class="w-full mb-2 p-2 rounded border-1 border-gray-500"
+			class="w-full mb-2 p-2 rounded-lg border-1 border-gray-500"
 			required
 		>
 		<div class="flex justify-center m-3">
